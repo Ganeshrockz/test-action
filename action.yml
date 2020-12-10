@@ -1,0 +1,8 @@
+name: 'Test action'
+description: 'Set an output variable'
+outputs:
+  metadata:
+    description: Any json output
+runs:
+  using: 'node12'
+  main: 'index.js'
