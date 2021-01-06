@@ -23,11 +23,12 @@ try {
   core.setOutput("metadata", payload)
   console.log(process.env.SAMPLE);
   let sample = process.env.SAMPLE;
+  let added="Added";
   if (!sample){
-    sample = "Added";
+    sample = added;
   }
   else {
-    sample += ";Added";
+    sample = `${sample};${added}`
   }
   
   core.exportVariable("SAMPLE", sample);
