@@ -22,13 +22,15 @@ try {
   console.log(`The event payload: ${payload}`);
   core.setOutput("metadata", payload)
   console.log(process.env.SAMPLE);
-  
-  if (!process.env.SAMPLE){
-    process.env.SAMPLE = "Added";
+  let sample = process.env.SAMPLE;
+  if (!sample){
+    sample = "Added";
   }
   else {
-    process.env.SAMPLE += ";Added";
+    sample += ";Added";
   }
+  
+  core.exportVariable("SAMPLE", sample);
   
 } catch (error) {
   core.setFailed(error.message);
